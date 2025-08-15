@@ -108,31 +108,35 @@
     </div>
 
     <!-- Google Drive Video -->
-    <div class="card fade-in">
+  <div class="card fade-in">
+    <!-- Video -->
     <video 
-    autoplay 
-    muted 
-    loop 
-    playsinline 
-    preload="none" 
-    style="width:100%; aspect-ratio:9/16; object-fit:cover;">
-    <source src="video/wanita-haid-fix.mp4" type="video/mp4">
-    Browser Anda tidak mendukung video.
-  </video>
+      class="click-sound"
+      autoplay 
+      muted 
+      loop 
+      playsinline 
+      preload="none" 
+      style="width:100%; aspect-ratio:9/16; object-fit:cover; cursor:pointer;">
+      <source src="video/wanita-haid-fix.mp4" type="video/mp4">
+      Browser Anda tidak mendukung video.
+    </video>
   <div class="caption">Video Showcase 6</div>
 </div>
 
 <div class="card fade-in">
+   <!-- Video -->
     <video 
-    autoplay 
-    muted 
-    loop 
-    playsinline 
-    preload="none" 
-    style="width:100%; aspect-ratio:9/16; object-fit:cover;">
-    <source src="video/baraq-kecil.mp4" type="video/mp4">
-    Browser Anda tidak mendukung video.
-  </video>
+      class="click-sound"
+      autoplay 
+      muted 
+      loop 
+      playsinline 
+      preload="none" 
+      style="width:100%; aspect-ratio:9/16; object-fit:cover; cursor:pointer;">
+      <source src="video/baraq-kecil.mp4" type="video/mp4">
+      Browser Anda tidak mendukung video.
+    </video>
   <div class="caption">Video Showcase 7</div>
 </div>
 
@@ -141,19 +145,18 @@
   <!-- Instagram embed script -->
   <script async src="//www.instagram.com/embed.js"></script>
 
+  <!-- Script untuk semua video -->
   <script>
-    const elements = document.querySelectorAll(".fade-in");
-    function checkScroll() {
-      const triggerBottom = window.innerHeight * 0.85;
-      elements.forEach((el) => {
-        const rect = el.getBoundingClientRect().top;
-        if (rect < triggerBottom) {
-          el.classList.add("show");
+    document.querySelectorAll(".click-sound").forEach(video => {
+      video.addEventListener("click", () => {
+        if (video.muted) {
+          video.muted = false; // nyalain suara
+          video.play();
+        } else {
+          video.muted = true; // matiin suara
         }
       });
-    }
-    window.addEventListener("scroll", checkScroll);
-    checkScroll();
+    });
   </script>
 </body>
 </html>
