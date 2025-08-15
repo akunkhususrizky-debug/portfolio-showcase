@@ -145,18 +145,18 @@
   <!-- Instagram embed script -->
   <script async src="//www.instagram.com/embed.js"></script>
 
-  <!-- Script untuk semua video -->
   <script>
-    document.querySelectorAll(".click-sound").forEach(video => {
-      video.addEventListener("click", () => {
-        if (video.muted) {
-          video.muted = false; // nyalain suara
-          video.play();
-        } else {
-          video.muted = true; // matiin suara
-        }
-      });
+  document.querySelectorAll(".click-sound").forEach(video => {
+    video.addEventListener("click", () => {
+      if (video.muted) {
+        video.muted = false; // nyalain suara
+        video.play();
+      } else {
+        video.muted = true; // matiin suara
+      }
     });
-  </script>
+  });
+</script>
+
 </body>
 </html>
